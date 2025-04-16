@@ -68,15 +68,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 }); 
 
-// Email redirection functionality
 document.querySelectorAll('.email-button, .footer-link').forEach(link => {
     if (link.textContent.trim() === 'Email me') {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const email = 'startcodewithus@gmail.com';
             const subject = 'Inquiry from Portfolio Website';
-            const gmailUrl = `https://mail.google.com/mail/u/0/?fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&tf=cm`;
-            window.open(gmailUrl, '_blank');
+            const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+            window.location.href = mailtoUrl;
         });
     }
-}); 
+});
