@@ -4,41 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Designer</title>
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.jpeg">
-    <link rel="icon" type="image/jpeg" sizes="32x32" href="images/favicon.jpeg">
-    <link rel="icon" type="image/jpeg" sizes="16x16" href="images/favicon.jpeg">
-    <link rel="shortcut icon" href="images/favicon.jpeg">
-    <meta name="theme-color" content="#ffffff">
-    <script>
-        // Make favicon roundish when it's loaded
-        window.addEventListener('DOMContentLoaded', () => {
-            const faviconLink = document.querySelector('link[rel="icon"]');
-            if (faviconLink) {
-                const favicon = document.createElement('img');
-                favicon.src = faviconLink.href;
-                favicon.onload = () => {
-                    const canvas = document.createElement('canvas');
-                    canvas.width = favicon.width;
-                    canvas.height = favicon.height;
-                    const ctx = canvas.getContext('2d');
-                    ctx.beginPath();
-                    ctx.arc(
-                        canvas.width / 2,
-                        canvas.height / 2,
-                        canvas.width / 2,
-                        0,
-                        Math.PI * 2
-                    );
-                    ctx.closePath();
-                    ctx.clip();
-                    ctx.drawImage(favicon, 0, 0);
-                    
-                    faviconLink.href = canvas.toDataURL();
-                };
-            }
-        });
-    </script>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
